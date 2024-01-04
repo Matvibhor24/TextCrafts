@@ -1,0 +1,32 @@
+/* .hover-animation:hover {
+    opacity: 1;
+} */
+.button-container {
+    position: relative;
+    height:60%;
+    width:60%;
+    /* display: inline-block; */
+  }
+  
+  .hover-animation {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 10%;
+    height: 10%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none; /* Allows button clicks through the image */
+  }
+  
+  .button-container:hover .hover-animation {
+    opacity: 0.5;
+  }
+  
+  .animated-button {
+    /* Adjust button styles as needed */
+    border: none;
+    background: transparent;
+    /* padding: 10px 20px; */
+  }
+  
