@@ -1,6 +1,16 @@
 /* .hover-animation:hover {
     opacity: 1;
 } */
+  .heading-tab {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+  }
+  .button-group {
+    display: flex;
+    margin-right: 10px;
+  }
+  
 .button-container {
     position: relative;
     height:60%;
