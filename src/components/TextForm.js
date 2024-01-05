@@ -15,7 +15,8 @@ export default function TextForm(props){
     const onLoClick=()=>{
         setText1(text.toLowerCase());
     }
-
+    
+    // let readTime = text.split(" ").length * 0.008;
     return (
         <>
 
@@ -34,11 +35,11 @@ export default function TextForm(props){
                 {displayText}
             </div>
             <div className="alert alert-success" role="alert" align="left">
-                <h5>Yout text Summary</h5>
+                <h5>Your text Summary</h5>
                 <hr/>
-                <p>Word Count : {text.split(" ").length}</p>
+                <p>Word Count : {text==="" ? 0 : text.split(" ").length}</p>
                 <p>Character Count : {text.length}</p>
-                <p>{text.split(" ").length * 0.008} Minute Read</p>
+                <p>{text.split(" ").length*0.008 < 1 ? text==="" ? 0+` Seconds Read` : text.split(" ").length*0.48+` Seconds Read`: text.split(" ").length*0.008+` Minutes Read`}</p>
             </div>
             <div className="alert alert-success" role="alert" align="left">
                 <h5>Preview</h5>
