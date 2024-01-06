@@ -1,12 +1,13 @@
 /* .hover-animation:hover {
     opacity: 1;
 } */
+
   .heading-tab {
     display: flex;
     justify-content: space-between;
     /* align-items: center; */
   }
-  .button-group {
+  .btn-group {
     display: flex;
     margin-right: 10px;
   }
@@ -37,6 +38,7 @@
     /* Adjust button styles as needed */
     border: none;
     background: transparent;
+    
     /* padding: 10px 20px; */
   }
   

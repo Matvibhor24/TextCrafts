@@ -5,7 +5,7 @@ import TextForm from './components/TextForm';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{backgroundColor:'#333'}}>
       <Navbar title="TextCrafts" />
       <div className="container my-5">
       <TextForm heading="Enter your text below"/>

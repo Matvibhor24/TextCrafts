@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import up_animation from './up_animation.gif'
+// import up_animation from './up_animation.gif'
 import './HoverAnimation.css'
 
 export default function TextForm(props){
@@ -15,17 +15,21 @@ export default function TextForm(props){
     const onLoClick=()=>{
         setText1(text.toLowerCase());
     }
+    const onClearHandler=()=>{
+        document.getElementById("exampleFormControlTextarea1").value="";
+        setText("");
+    }
     
     // let readTime = text.split(" ").length * 0.008;
     return (
         <>
-
+       
         <div className="heading-tab"> 
-            <h5 align="left">{props.heading}</h5>
+            <h5 className="text-white" align="left">{props.heading}</h5>
             <div className="btn-group" align="right" role="group" aria-label="Basic example" >
-                <button type="button" className="btn btn-success">Left</button>
-                <button type="button" className="btn btn-secondary">Middle</button>
-                <button type="button" className="btn btn-secondary">Right</button>
+                <button type="button" className="btn btn-outline-success bg-success-subtle" onClick={onUpClick} >To Uppercase</button>
+                <button type="button" className="btn btn-outline-success bg-success-subtle" onClick={onLoClick}>To lowercase</button>
+                <button type="button" className="btn btn-outline-success bg-success-subtle" onClick={onClearHandler}>Clear Text</button>
             </div>
         </div>
 
@@ -47,14 +51,14 @@ export default function TextForm(props){
                 <p>{text}</p>
             </div>
         </div>
-        <div className="button-container">
+        {/* <div className="button-container">
 
         <img src={up_animation} alt="Hover Animation" className="hover-animation"/>
         <button className="btn btn-outline-dark animated-button" onClick={onUpClick}><b>To UPPERCASE</b></button>
-        <button className="btn btn-outline-dark " onClick={onLoClick}><b>To lowercase</b></button>
-        {/* <button type="button" class="btn btn-outline-success-subtle">Light</button> */}
-        </div>
-
+        <button className="btn btn-outline-dark " onClick={onLoClick}><b>To lowercase</b></button> 
+        <button type="button" class="btn btn-outline-success-subtle">Light</button>
+        </div> */}
+        
         </>
     );
 }
