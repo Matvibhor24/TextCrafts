@@ -5,19 +5,24 @@ import './HoverAnimation.css'
 export default function TextForm(props){
     const[text,setText] = useState("");
     const [displayText,setText1] = useState("");
+    const [displayBoxVisible,setDisplayBoxVisible] = useState(false);
 
     const onChangeHandler=(event)=>{
         setText(event.target.value);
     }
     const onUpClick=()=>{
+        setDisplayBoxVisible(true);
         setText1(text.toUpperCase());
     }
     const onLoClick=()=>{
+        setDisplayBoxVisible(true);
         setText1(text.toLowerCase());
     }
     const onClearHandler=()=>{
+        setDisplayBoxVisible(false);
         document.getElementById("exampleFormControlTextarea1").value="";
         setText("");
+        setText1("");
     }
     
     // let readTime = text.split(" ").length * 0.008;
@@ -34,8 +39,8 @@ export default function TextForm(props){
         </div>
 
         <div className="mb-5">
-            <textarea className="form-control border-success-subtle" onChange={onChangeHandler} id="exampleFormControlTextarea1" rows="8"> </textarea>
-            <div className="alert alert-success" role="alert" align="left">
+            <textarea className="form-control border-success-subtle" value={text} onChange={onChangeHandler} id="exampleFormControlTextarea1" rows="8"> </textarea>
+            <div className={`alert alert-success ${displayBoxVisible ? 'd-block' : 'd-none'}`} role="alert" align="left">
                 {displayText}
             </div>
             <div className="alert alert-success" role="alert" align="left">
