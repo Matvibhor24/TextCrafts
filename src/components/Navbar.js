@@ -17,10 +17,14 @@ export default function Navbar(props){
                 <a className="nav-link" href="/">About</a>
               </li>
             </ul>
-            <form className="d-flex" role="search">
+            {/* <form className="d-flex" role="search">
               <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
               <button className="btn btn-outline-success" type="submit">Search</button>
-            </form>
+            </form> */}
+            <div className="form-check form-switch">
+            <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
+            <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Switch Mode</label>
+          </div>
           </div>
         </div>
       </nav>

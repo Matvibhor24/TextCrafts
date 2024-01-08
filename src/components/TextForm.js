@@ -1,6 +1,7 @@
 import React,{useState} from "react";
 // import up_animation from './up_animation.gif'
-import './HoverAnimation.css'
+import './TextForm.css'
+import icon from './copy_icon.png';
 
 export default function TextForm(props){
     const[text,setText] = useState("");
@@ -9,6 +10,8 @@ export default function TextForm(props){
 
     const onChangeHandler=(event)=>{
         setText(event.target.value);
+        setDisplayBoxVisible(false);
+        // setText1("");
     }
     const onUpClick=()=>{
         setDisplayBoxVisible(true);
@@ -24,29 +27,43 @@ export default function TextForm(props){
         setText("");
         setText1("");
     }
-    
+    const onCopyHandler=()=>{
+        // document.getElementById("display-box").select();
+        navigator.clipboard.writeText(displayText);
+        alert("copied to clipboard!");
+    }
+    const onRemoveSpaceHandler=()=>{
+        setDisplayBoxVisible(true);
+        let newText = text.split(" ");
+        setText1(newText.join(" "));
+    }
     // let readTime = text.split(" ").length * 0.008;
     return (
         <>
-       
-        <div className="heading-tab"> 
-            <h5 className="text-white" align="left">{props.heading}</h5>
+
+        <div className="heading-tab">
+            <h5 align="left">{props.heading}</h5>
             <div className="btn-group" align="right" role="group" aria-label="Basic example" >
                 <button type="button" className="btn btn-outline-success bg-success-subtle" onClick={onUpClick} >To Uppercase</button>
                 <button type="button" className="btn btn-outline-success bg-success-subtle" onClick={onLoClick}>To lowercase</button>
                 <button type="button" className="btn btn-outline-success bg-success-subtle" onClick={onClearHandler}>Clear Text</button>
+                {/* <button type="button" className="btn btn-outline-success bg-success-subtle" onClick={onCopyHandler}>Copy Text</button> */}
+                <button type="button" className="btn btn-outline-success bg-success-subtle" onClick={onRemoveSpaceHandler}>Remove Extra spaces</button>
             </div>
         </div>
 
         <div className="mb-5">
-            <textarea className="form-control border-success-subtle" value={text} onChange={onChangeHandler} id="exampleFormControlTextarea1" rows="8"> </textarea>
-            <div className={`alert alert-success ${displayBoxVisible ? 'd-block' : 'd-none'}`} role="alert" align="left">
-                {displayText}
+            <textarea className="form-control border-success-subtle" value={text} onChange={onChangeHandler} id="exampleFormControlTextarea1" placeholder="Type here or Copy your text here..." rows="8"> </textarea>
+            <div className={`display-box alert alert-success ${displayBoxVisible ? 'd-block' : 'd-none'}`} role="alert" align="left">
+                <p>{displayText}</p>
+                <button className="image-button" align="right" onClick={onCopyHandler} style={{border:"none",background:"transparent",cursor: "pointer"}}>
+                    <img src={icon} alt="hii" align="right"/>
+                </button>
             </div>
             <div className="alert alert-success" role="alert" align="left">
                 <h5>Your text Summary</h5>
                 <hr/>
-                <p>Word Count : {text==="" ? 0 : text.split(" ").length}</p>
+                <p>Word Count : {text==="" ? 0 : text.split(/[ ]+/).join(" ").split(" ").length}</p>
                 <p>Character Count : {text.length}</p>
                 <p>{text.split(" ").length*0.008 < 1 ? text==="" ? 0+` Seconds Read` : text.split(" ").length*0.48+` Seconds Read`: text.split(" ").length*0.008+` Minutes Read`}</p>
             </div>
