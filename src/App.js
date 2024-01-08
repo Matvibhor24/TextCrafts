@@ -1,17 +1,14 @@
-// import logo from './logo.svg';
-import './App.css';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 
 function App() {
   return (
-    // <div className="App" style={{backgroundColor:'#333'}}>
-    <div className="App">
+    <div className="App" style={{height:'100vh' ,backgroundColor:'#64b577', overflow:"auto"}}>
+    {/* // <div className=" container-fluid bg-success h-100" > */}
       <Navbar title="TextCrafts" />
-      <div className="container my-5 h-100">
-      <TextForm heading="Enter your text below"/>
+      <div className="container my-5 ">
+        <TextForm heading="Enter your text below"/>
       </div>
-      
     </div>
   );
 }

@@ -42,7 +42,7 @@ export default function TextForm(props){
         <>
 
         <div className="heading-tab">
-            <h5 align="left">{props.heading}</h5>
+            <h5>{props.heading}</h5>
             <div className="btn-group" align="right" role="group" aria-label="Basic example" >
                 <button type="button" className="btn btn-outline-success bg-success-subtle" onClick={onUpClick} >To Uppercase</button>
                 <button type="button" className="btn btn-outline-success bg-success-subtle" onClick={onLoClick}>To lowercase</button>
@@ -54,11 +54,11 @@ export default function TextForm(props){
 
         <div className="mb-5">
             <textarea className="form-control border-success-subtle" value={text} onChange={onChangeHandler} id="exampleFormControlTextarea1" placeholder="Type here or Copy your text here..." rows="8"> </textarea>
-            <div className={`display-box alert alert-success ${displayBoxVisible ? 'd-block' : 'd-none'}`} role="alert" align="left">
-                <p>{displayText}</p>
-                <button className="image-button" align="right" onClick={onCopyHandler} style={{border:"none",background:"transparent",cursor: "pointer"}}>
-                    <img src={icon} alt="hii" align="right"/>
+            <div className={`display-box container alert alert-success ${displayBoxVisible ? 'd-block' : 'd-none'}`} role="alert" align="left">
+                <button className="image-button" onClick={onCopyHandler} style={{border:"none",background:"transparent",cursor: "pointer"}}>
+                    <img src={icon} alt="hii" />
                 </button>
+                <p>{displayText}</p>
             </div>
             <div className="alert alert-success" role="alert" align="left">
                 <h5>Your text Summary</h5>

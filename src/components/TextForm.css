@@ -14,10 +14,11 @@
   }
   .btn-group {
     display: flex;
-    margin-right: 10px;
   }
   .image-button{
-    display: flex;
+    /* display: flex; */
+    position:absolute;
+    right: 0;
     margin-right: 10px;
   }
 .button-container {
@@ -27,7 +28,7 @@
     /* display: inline-block; */
   }
   
-  .hover-animation {
+  /* .hover-animation {
     position: relative;
     top: 0;
     left: 0;
@@ -35,18 +36,13 @@
     height: 10%;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
-    pointer-events: none; /* Allows button clicks through the image */
-  }
-  
-  .button-container:hover .hover-animation {
+    pointer-events: none;
+  } */
+  /* .button-container:hover .hover-animation {
     opacity: 0.5;
   }
-  
-  .animated-button {
-    /* Adjust button styles as needed */
+   */
+  /* .animated-button {
     border: none;
     background: transparent;
-    
-    /* padding: 10px 20px; */
-  }
-  
+  } */
