@@ -1,8 +1,10 @@
 import React from "react";
+import moon from './moon.png';
+import sun from './light.png';
 
 export default function Navbar(props){
   const modeSwitchStyle= {
-    backgroundColor: props.mode==='light'?'#495057':'#d5e4dc',
+    backgroundColor: props.mode==='light'?'#495057':'#adb5bd',
   }
   const textStyle = {
     color: props.mode==='light'?'#333':'#d5e4dc'
@@ -29,7 +31,10 @@ export default function Navbar(props){
             </form> */}
             <div className="form-check form-switch">
             <input className="form-check-input" type="checkbox" onClick={props.toggleMode} role="switch" id="flexSwitchCheckDefault" style={modeSwitchStyle}/>
-            <label className="form-check-label" style={textStyle} htmlFor="flexSwitchCheckDefault">{props.mode==='light'?'Dark':'Light'}Mode</label>
+            {/* <label className="form-check-label" style={textStyle} htmlFor="flexSwitchCheckDefault">{props.mode==='light'?'Dark':'Light'}Mode</label> */}
+            <label className="form-check-label" style={textStyle} htmlFor="flexSwitchCheckDefault">
+              <img src={props.mode==='light'?moon:sun} style={{width:30,height:30}}alt="hii"/>
+            </label>
           </div>
           </div>
         </div>
