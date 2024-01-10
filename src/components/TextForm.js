@@ -58,6 +58,7 @@ export default function TextForm(props){
                 <button className="image-button" onClick={onCopyHandler} style={{border:"none",background:"transparent",cursor: "pointer"}}>
                     <img src={icon} alt="hii" />
                 </button>
+                {/* <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button> */}
                 <p>{displayText}</p>
             </div>
             <div className={`alert bg-${props.mode==='light'?'success-subtle':'success'} shadow p-3 mb-5 rounded my-3 text-${props.mode==='light'?'black':'white'}`} role="alert" align="left">
