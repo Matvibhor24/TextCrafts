@@ -33,6 +33,7 @@ export default function TextForm(props){
         alert("copied to clipboard!");
     }
     const reverseText = () => {
+        setDisplayBoxVisible(true);
         const reversedText = text.split('').reverse().join('');
         setText1(reversedText);
     }
