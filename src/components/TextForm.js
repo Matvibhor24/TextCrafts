@@ -32,6 +32,10 @@ export default function TextForm(props){
         navigator.clipboard.writeText(displayText);
         alert("copied to clipboard!");
     }
+    const reverseText = () => {
+        const reversedText = text.split('').reverse().join('');
+        setText1(reversedText);
+    }
     const onRemoveSpaceHandler=()=>{
         setDisplayBoxVisible(true);
         let newText = text.split(" ");
@@ -49,6 +53,7 @@ export default function TextForm(props){
                 <button type="button" className="btn " onClick={onClearHandler}>Clear Text</button>
                 {/* <button type="button" className="btn btn-outline-success bg-success-subtle" onClick={onCopyHandler}>Copy Text</button> */}
                 <button type="button" className="btn " onClick={onRemoveSpaceHandler}>Remove Extra spaces</button>
+                <button type="button" className="btn " onClick={reverseText}>Reverse Text</button>
             </div>
         </div>
 
