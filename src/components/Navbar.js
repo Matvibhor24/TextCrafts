@@ -4,7 +4,7 @@ import sun from './light.png';
 
 export default function Navbar(props){
   const modeSwitchStyle= {
-    backgroundColor: props.mode==='light'?'#495057':'#adb5bd',
+    backgroundColor: props.mode==='light'?'#495060':'#adb5bd',
   }
   const textStyle = {
     color: props.mode==='light'?'#333':'#d5e4dc'
