@@ -21,6 +21,13 @@ export default function TextForm(props){
         setDisplayBoxVisible(true);
         setText1(text.toLowerCase());
     }
+    const convertToTitleCase = () => {
+        setDisplayBoxVisible(true);
+        const titleCaseText = text.replace(/\w\S*/g, (word) =>
+          word.charAt(0).toUpperCase() + word.substr(1).toLowerCase()
+        );
+        setText1(titleCaseText);
+      };
     const onClearHandler=()=>{
         setDisplayBoxVisible(false);
         document.getElementById("exampleFormControlTextarea1").value="";
@@ -51,6 +58,7 @@ export default function TextForm(props){
             <div className={`btn-group bg-${props.mode==='light'?'success-subtle':'success'} btn-outline-success shadow-lg rounded`} align="right" role="group" aria-label="Basic example" >
                 <button type="button" className="btn " onClick={onUpClick} >To Uppercase</button>
                 <button type="button" className="btn " onClick={onLoClick}>To lowercase</button>
+                <button type="button" className="btn " onClick={convertToTitleCase}>To Titlecase</button>
                 <button type="button" className="btn " onClick={onClearHandler}>Clear Text</button>
                 {/* <button type="button" className="btn btn-outline-success bg-success-subtle" onClick={onCopyHandler}>Copy Text</button> */}
                 <button type="button" className="btn " onClick={onRemoveSpaceHandler}>Remove Extra spaces</button>
