@@ -1,12 +1,23 @@
 /* .hover-animation:hover {
     opacity: 1;
 } */
-
+.comp_container {
+  display: flex;
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  flex-direction: column;
+}
   .heading-tab {
     display: flex;
     justify-content: space-between;
     /* align-items: center; */
   }
+  /* .heading-tab {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+   */
   .display-box {
     display: flex;
     justify-content: space-between;

@@ -1,0 +1,19 @@
+/* .dropdown-menu {
+    position: absolute;
+    left: -100%;
+    top: 0; 
+    }
+    .dropdown {
+        position: absolute;
+        right: 0;
+        transform: translateX(100%);
+      }
+       */
+       .function-button-bar {
+        display: flex;
+        justify-content: flex-end;
+        padding-right: calc(100% - width_of_text_form); /* Adjust this value */
+      }
+      .dropdown-menu {
+        margin-left: auto;
+      }
