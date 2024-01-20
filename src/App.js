@@ -30,16 +30,16 @@ function App() {
     <div className="App " style={appStyle}>
     {/* <div className=" container-fluid bg-success h-100" >  */}
       <Navbar title="TextCrafts" mode={mode} toggleMode={toggleMode}/>
-      <div className="container my-5 ">
       <Switch>
         <Route exact path="/">
-          <TextForm heading="Enter your text below" mode={mode}/>
+          <div className="container my-5 ">
+            <TextForm heading="Enter your text below" mode={mode}/>
+          </div>
         </Route>
         <Route exact path="/about">
-          <About/>
+          <About mode={mode}/>
         </Route>
       </Switch>
-      </div>
     </div>
     </Router>
     </>
