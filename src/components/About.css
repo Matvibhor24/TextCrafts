@@ -26,9 +26,9 @@
 }
 .content {
     position: relative;
-    top: 200px; /* Adjust this value as needed */
+    /* top: 200px; Adjust this value as needed */
     /* background-color: white; */
-    padding: 20px;
+    padding: 50px;
 }
 .image-container {
     top:9px;

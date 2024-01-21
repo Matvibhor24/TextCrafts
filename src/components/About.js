@@ -1,6 +1,7 @@
 import React from 'react'
 import './About.css'
 import bgLogo from './textcrafts.png'
+import bgLogo1 from './text-box.png'
 
 export default function About(props) { 
   const AboutBGStyle = {
@@ -10,7 +11,7 @@ export default function About(props) {
     <>
     {/* <div className="header" > */}
     <div className={`head shadow p-3 text-${props.mode==='light'?'white':'black'}`} style={AboutBGStyle}>
-      <h1 className="head my-5" align="center" ><b>About Us</b></h1>
+      <h1 className="head my-5" align="center" ><b>About Us   </b><img src={bgLogo1} width="40px" height="50px" margin-bottom="1px"></img></h1>
       <div class="image-container">
         <img className="image" src={bgLogo} alt="People gathered around" />
       </div>
