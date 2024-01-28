@@ -63,13 +63,13 @@ export default function TextForm(props){
                 <h5>{props.heading}</h5>
                 {/* <FunctionButtonBar/> */}
             <div className={`btn-group bg-${props.mode==='light'?'success-subtle':'success'} btn-outline-success shadow-lg rounded`} align="right" role="group" aria-label="Basic example" >
-                <button type="button" className="btn " onClick={onUpClick} >To Uppercase</button>
-                <button type="button" className="btn " onClick={onLoClick}>To lowercase</button>
-                <button type="button" className="btn " onClick={convertToTitleCase}>To Titlecase</button>
-                <button type="button" className="btn " onClick={onClearHandler}>Clear Text</button>
-                <button type="button" className="btn " onClick={onRemoveSpaceHandler}>Remove Extra spaces</button>
-                <button type="button" className="btn " onClick={removeSpecialCharacters}>Remove Special Characters</button>
-                <button type="button" className="btn " onClick={reverseText}>Reverse Text</button>
+                <button type="button" disabled={text===""} className="btn " onClick={onUpClick} >To Uppercase</button>
+                <button type="button" disabled={text===""} className="btn " onClick={onLoClick}>To lowercase</button>
+                <button type="button" disabled={text===""} className="btn " onClick={convertToTitleCase}>To Titlecase</button>
+                <button type="button" disabled={text===""} className="btn " onClick={onClearHandler}>Clear Text</button>
+                <button type="button" disabled={text===""} className="btn " onClick={onRemoveSpaceHandler}>Remove Extra spaces</button>
+                <button type="button" disabled={text===""} className="btn " onClick={removeSpecialCharacters}>Remove Special Characters</button>
+                <button type="button" disabled={text===""} className="btn " onClick={reverseText}>Reverse Text</button>
             </div>
             </div>
 
