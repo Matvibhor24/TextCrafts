@@ -85,7 +85,7 @@ export default function TextForm(props){
             <div className={`alert bg-${props.mode==='light'?'success-subtle':'success'} shadow p-3 mb-5 rounded my-3 text-${props.mode==='light'?'black':'white'}`} role="alert" align="left">
                 <h5>Your text Summary</h5>
                 <hr className="border-black border-2"/>
-                <p>Word Count : {text==="" ? 0 : text.split(/[ ]+/).join(" ").split(" ").length}</p>
+                <p>Word Count : {text==="" ? 0 : text.split(/\s+/).join(" ").split(" ").length}</p>
                 <p>Character Count : {text.length}</p>
                 <p>{text.split(" ").length*0.008 < 1 ? text==="" ? 0+` Seconds Read` : text.split(" ").length*0.48+` Seconds Read`: text.split(" ").length*0.008+` Minutes Read`}</p>
             </div>
